@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="btnSignUp">#39796b</color>
+    <color name="loginbtn">#A9d440</color>
+    <color name="bttnEdit">#2056ea</color>
+    <color name="bttnPost">#b1002c</color>
+
 </resources>

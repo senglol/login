@@ -17,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Profile_activity extends AppCompatActivity {
-    private TextView profileName,profilePhone,profileIc;
+    private TextView profileName,profilePhone,profileIc,profileEmail;
     private Button profileEdit;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
@@ -29,7 +29,10 @@ public class Profile_activity extends AppCompatActivity {
         profileName=findViewById( R.id.tvUserName);
         profilePhone=findViewById( R.id.tvUserPhone);
         profileIc=findViewById(R.id.tvUserIc);
+        profileEmail=findViewById(R.id.tvUserEmail);
         profileEdit=findViewById(R.id.btnEditProfile);
+
+
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -42,6 +45,7 @@ public class Profile_activity extends AppCompatActivity {
                 profileName.setText("Name:"+ userProfile.getUserName());
                 profilePhone.setText("Contact Number:"+ userProfile.getUserPhone());
                 profileIc.setText("IC Number:"+ userProfile.getUserIc());
+                profileEmail.setText("Email:"+userProfile.getUserEmail());
             }
 
             @Override

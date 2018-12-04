@@ -11,46 +11,79 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="match_parent"
+        android:background="@drawable/background"
         tools:context="com.example.user.login.post">
 
 
         <ImageButton
             android:id="@+id/imageBtn"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="219dp"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
             android:src="@drawable/add_img" />
 
-        <EditText
+        <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/textTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginRight="5dp"
             android:hint="Post Title"
+            android:inputType="text"
             android:padding="10dp"
-            android:textStyle="bold" />
-        <EditText
-            android:padding="10dp"
-            android:layout_marginTop="20dp"
-            android:hint="Post Description"
-            android:id="@+id/textDesc"
-            android:layout_marginRight="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:layout_marginTop="30dp"
-            android:id="@+id/postBtn"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_marginRight="5dp"
-            android:layout_marginLeft="5dp"
+            app:met_baseColor="@android:color/white"
+            app:met_floatingLabel="highlight"
+            app:met_maxCharacters="20"
+            app:met_primaryColor="@android:color/white"
+            app:met_singleLineEllipsis="true" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/textDesc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Post"/>
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="5dp"
+
+            android:hint="Post Description"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:textSize="20sp"
+            app:met_baseColor="@android:color/white"
+            app:met_floatingLabel="highlight"
+            app:met_maxCharacters="20"
+            app:met_primaryColor="@android:color/white"
+            app:met_singleLineEllipsis="true" />
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/postBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@android:color/white"
+            app:cornerRadius="4dp"
+            app:fButtonColor="@color/bttnPost"
+            android:text="Post"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </ScrollView>

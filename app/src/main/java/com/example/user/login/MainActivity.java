@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText Email,Password;
     private Button Login;
-    private TextView Register;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
     private ProgressDialog progressDialog;
@@ -42,17 +41,18 @@ public class MainActivity extends AppCompatActivity {
         Email =findViewById(R.id.etEmail);
         Password =findViewById(R.id.etpw);
         Login =findViewById(R.id.loginbttn);
-        Register =findViewById(R.id.tvSignUp);
+
+
 
         firebaseAuth= FirebaseAuth.getInstance();
         FirebaseUser user= firebaseAuth.getCurrentUser();
         progressDialog= new ProgressDialog(MainActivity.this);
 
         //see whether after register will go to main or second activity
-//        if (user!= null){
-//            finish();
-//            startActivity(new Intent(MainActivity.this,user.class));
-//        }
+        if (user!= null){
+           finish();
+            startActivity(new Intent(MainActivity.this,user.class));
+         }
 
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,13 +61,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent= new Intent(MainActivity.this,register.class);
-                startActivity(intent);
-            }
-        });
+//        b1.setOnClickListener(new View.OnClickListener() {
+//           @Override
+//            public void onClick(View v) {
+//                Intent intent= new Intent(MainActivity.this,register.class);
+//              startActivity(intent);
+//           }
+//       });
     }
 
 
@@ -94,8 +94,8 @@ public class MainActivity extends AppCompatActivity {
                           }
                             else{
                                 progressDialog.dismiss();
-                                Toast.makeText(MainActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
-                                MainActivity.this.finish();
+                                Toast.makeText(MainActivity.this, "Please enter a valid email address and password", Toast.LENGTH_SHORT).show();
+                               MainActivity.this.finish();
                                 startActivity(new Intent(MainActivity.this, post.class));
                             }
                         }

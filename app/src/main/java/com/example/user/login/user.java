@@ -12,20 +12,14 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class user extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
-    private Button p1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
-        p1=findViewById(R.id.profile);
         firebaseAuth = FirebaseAuth.getInstance();
-        p1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(user.this,Profile_activity.class));
-            }
-        });
+
 
 
     }

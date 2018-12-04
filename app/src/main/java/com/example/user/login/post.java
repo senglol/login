@@ -90,7 +90,7 @@ public class post extends AppCompatActivity {
                                 filepath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                     @Override
                                     public void onSuccess(Uri uri) {
-                                        Toast.makeText(getApplicationContext(), "Succesfully Uploaded", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "Successfully Uploaded", Toast.LENGTH_SHORT).show();
                                         final DatabaseReference newPost = databaseRef.push();
                                         final Uri downloadUrl = uri;
 

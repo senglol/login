@@ -25,7 +25,6 @@ public class activity_update_profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_profile);
-
         newUserName= findViewById(R.id.etNameUpdate);
         newUserIc= findViewById(R.id.etIcUpdate);
         newUserPhone= findViewById(R.id.etPhoneUpdate);
@@ -46,6 +45,7 @@ public class activity_update_profile extends AppCompatActivity {
                     newUserPhone.setText(userProfile.getUserPhone());
                     newUserIc.setText(userProfile.getUserIc());
                     newUserEmail.setText(userProfile.getUserEmail());
+
             }
 
             @Override

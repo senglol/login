@@ -33,20 +33,10 @@ public class register extends AppCompatActivity {
         registerbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                validate();
-            }
-        });
-        firebaseAuth= FirebaseAuth.getInstance();
-
-
-
-
-        registerbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
                 if(validate()){
                     String user_email= useremail.getText().toString().trim();
                     String user_password= userpassword.getText().toString().trim();
+                    firebaseAuth= FirebaseAuth.getInstance();
                     firebaseAuth.createUserWithEmailAndPassword(user_email,user_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -56,8 +46,8 @@ public class register extends AppCompatActivity {
                                 Toast.makeText(register.this,"Registration Successful",Toast.LENGTH_SHORT).show();
                                 Intent intent= new Intent(register.this,MainActivity.class);
                                 startActivity(intent);
-                        }
-                        else{
+                            }
+                            else{
                                 Toast.makeText(register.this,"Registration Fail",Toast.LENGTH_SHORT).show();
                             }
                         }
